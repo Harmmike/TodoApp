@@ -2,12 +2,12 @@
 
 namespace TA.Desktop.ViewModels
 {
-    public class MainWIndowViewModel : ViewModel
+    public class MainWindowViewModel : ViewModel
     {
         public INavigator Navigator { get; set; }
         public EditViewModel EditViewModel { get; set; }
 
-        public MainWIndowViewModel(INavigator navigator, EditViewModel editViewModel)
+        public MainWindowViewModel(INavigator navigator, EditViewModel editViewModel)
         {
             Navigator = navigator;
             Navigator.UpdateCurrentView.Execute(ViewType.Home);

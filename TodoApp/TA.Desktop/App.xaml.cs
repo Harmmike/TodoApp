@@ -21,7 +21,7 @@ namespace TA.Desktop
             //Dependencies
             INavigator nav = new Navigator();
             EditViewModel editVM = new EditViewModel();
-            MainWIndowViewModel vm = new MainWIndowViewModel(nav, editVM);
+            MainWindowViewModel vm = new MainWindowViewModel(nav, editVM);
 
             //Start
             _window = new MainWindow();
