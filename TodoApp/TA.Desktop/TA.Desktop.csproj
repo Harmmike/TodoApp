@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Styles\ColorStyles\**" />
+    <EmbeddedResource Remove="Styles\ColorStyles\**" />
+    <None Remove="Styles\ColorStyles\**" />
+    <Page Remove="Styles\ColorStyles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Icons\btnAddHover.png" />
+    <None Remove="Assets\Icons\btnAddNorm.png" />
+    <None Remove="Assets\Icons\btnCloseHover.png" />
+    <None Remove="Assets\Icons\btnCloseNorm.png" />
+    <None Remove="Assets\Icons\btnEditHover.png" />
+    <None Remove="Assets\Icons\btnEditNorm.png" />
+    <None Remove="Assets\Icons\btnHomeActive.png" />
+    <None Remove="Assets\Icons\btnHomeNorm.png" />
+    <None Remove="Assets\Icons\btnMaximizeHover.png" />
+    <None Remove="Assets\Icons\btnMaximizeNorm.png" />
+    <None Remove="Assets\Icons\btnMinimizeHover.png" />
+    <None Remove="Assets\Icons\btnMinimizeNorm.png" />
+    <None Remove="Assets\Icons\Thumbnail.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TA.Domain\TA.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Icons\btnAddHover.png" />
+    <Resource Include="Assets\Icons\btnAddNorm.png" />
+    <Resource Include="Assets\Icons\btnCloseHover.png" />
+    <Resource Include="Assets\Icons\btnCloseNorm.png" />
+    <Resource Include="Assets\Icons\btnEditHover.png" />
+    <Resource Include="Assets\Icons\btnEditNorm.png" />
+    <Resource Include="Assets\Icons\btnHomeActive.png" />
+    <Resource Include="Assets\Icons\btnHomeNorm.png" />
+    <Resource Include="Assets\Icons\btnMaximizeHover.png" />
+    <Resource Include="Assets\Icons\btnMaximizeNorm.png" />
+    <Resource Include="Assets\Icons\btnMinimizeHover.png" />
+    <Resource Include="Assets\Icons\btnMinimizeNorm.png" />
+    <Resource Include="Assets\Icons\Thumbnail.png" />
+  </ItemGroup>
+
+</Project>
