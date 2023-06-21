@@ -93,7 +93,7 @@
     <ImageBrush x:Key="HomeHoverImage" ImageSource="/Assets/Icons/btnHomeActive.png"/>
     <ImageBrush x:Key="HomeNormImage" ImageSource="/Assets/Icons/btnHomeNorm.png"/>
 
-    <Style x:Key="NavButton" TargetType="RadioButton">
+    <Style x:Key="NavHomeButton" TargetType="RadioButton">
         <Setter Property="Height" Value="24"/>
         <Setter Property="Width" Value="24"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -119,6 +119,32 @@
     <!--#endregion-->
     
     <!--#region Add Button-->
+    <ImageBrush x:Key="AddHoverImage" ImageSource="/Assets/Icons/btnAddHover.png"/>
+    <ImageBrush x:Key="AddNormImage" ImageSource="/Assets/Icons/btnAddNorm.png"/>
+
+    <Style x:Key="NavAddButton" TargetType="RadioButton">
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="gridMain" Background="{StaticResource AddNormImage}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource AddHoverImage}" TargetName="gridMain"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource AddHoverImage}" TargetName="gridMain"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!--#endregion-->
 
 </ResourceDictionary>

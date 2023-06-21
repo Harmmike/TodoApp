@@ -32,9 +32,9 @@
 
             <!--Header Bar-->
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,7,0">
-                <Button Style="{StaticResource  MinimizeWindowButton}" Margin="0,5,5,0"/>
-                <Button Style="{StaticResource  MaximizeWindowButton}" Margin="0,5,5,0"/>
-                <Button Style="{StaticResource  CloseWindowButton}" Margin="0,5,5,0"/>
+                <Button Style="{StaticResource  MinimizeWindowButton}" Command="{Binding MinimizeWindow}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Margin="0,5,5,0"/>
+                <Button Style="{StaticResource  MaximizeWindowButton}" Command="{Binding MaximizeWindow}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"  Margin="0,5,5,0"/>
+                <Button Style="{StaticResource  CloseWindowButton}" Command="{Binding CloseApplication}" Margin="0,5,5,0"/>
             </StackPanel>
             
             <!--Search Bar-->
