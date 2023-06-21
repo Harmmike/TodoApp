@@ -22,6 +22,8 @@
     <SolidColorBrush x:Key="EditBackgroundLayerBrush" Color="#FFF5ECEB" Opacity="0.3"/>
     <SolidColorBrush x:Key="ListBackgroundLayerBrush" Color="#FFF5ECEB" Opacity="0.1"/>
     <SolidColorBrush x:Key="BorderBrush" Color="#FF97CEDA"/>
+    <SolidColorBrush x:Key="SelectedTodoBorderBrush" Color="#FD7E14"/>
+    <SolidColorBrush x:Key="TodoBackgroundBrush" Color="#FF10658C"/>
     <!--#endregion-->
     
 </ResourceDictionary>

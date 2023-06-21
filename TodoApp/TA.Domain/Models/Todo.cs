@@ -1,7 +1,11 @@
-﻿namespace TA.Domain.Models
+﻿using TA.Domain.Common;
+
+namespace TA.Domain.Models
 {
-    public class Todo
+    public class Todo : Observable
     {
+        private bool _isSelected;
+
         public TodoId Id { get; }
         public string Title { get; }
         public string Description { get; }
@@ -9,6 +13,12 @@
         public DateTime Due { get; }
         public bool IsUrgent { get; }
         public bool IsComplete { get; }
+
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set => SetProperty(ref _isSelected, value);
+        }
 
         public Todo(TodoId id, string title, string description, DateTime due, bool isUrgent = false, bool isComplete = false)
         {
@@ -19,6 +29,7 @@
             Due = due;
             IsUrgent = isUrgent;
             IsComplete = isComplete;
+            IsSelected = false;
         }
 
         /// <summary>
