@@ -49,4 +49,8 @@
     <Resource Include="Assets\Icons\Thumbnail.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Modals\" />
+  </ItemGroup>
+
 </Project>
