@@ -8,16 +8,9 @@
     
     <Grid Margin="5">
 
-        <ListView ItemContainerStyle="{StaticResource TodoListStyle}" SelectedItem="{Binding SelectedTodo}" Background="Transparent" BorderThickness="0" Margin="3">
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-        </ListView>
-        
+        <ListView ItemsSource="{Binding Todos}" ItemContainerStyle="{StaticResource TodoListStyle}"
+                  Background="Transparent" BorderThickness="0" Margin="3"/>
+
     </Grid>
     
 </UserControl>

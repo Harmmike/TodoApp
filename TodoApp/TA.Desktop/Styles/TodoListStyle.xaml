@@ -18,15 +18,23 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="Title" Grid.Column="0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Left" Padding="5"/>
-                                <Grid Grid.Column="1">
+                                <TextBlock Text="{Binding Title}" Grid.Column="0" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Padding="5"/>
+                                <Grid Grid.Column="1" Margin="0, 5, 0, 0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Text="06/23/2023" Grid.Row="0" FontSize="18" HorizontalAlignment="Center" Padding="1"/>
-                                    <TextBlock Text="12:00" Grid.Row="1" FontSize="18" HorizontalAlignment="Center" Padding="1"/>
+                                    <TextBlock Text="{Binding DueDate}" Grid.Row="0" FontSize="14" HorizontalAlignment="Center" Padding="1"/>
+                                    <TextBlock Text="{Binding DueTime}" Grid.Row="1" FontSize="14" HorizontalAlignment="Center" Padding="1"/>
                                 </Grid>
+                                <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+                                    <CheckBox IsChecked="{Binding IsUrgent, Mode=OneWay}" Margin="5"/>
+                                    <CheckBox IsChecked="{Binding IsComplete, Mode=OneWay}" Margin="5"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Right" Margin="10, 5, 5, 5">
+                                    <TextBlock Text="Urgent" FontSize="10" Margin="5" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Complete" FontSize="10" Margin="5, 7, 5, 5" VerticalAlignment="Center"/>
+                                </StackPanel>
 
                             </Grid>
                         </Border>
