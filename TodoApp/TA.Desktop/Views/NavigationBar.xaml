@@ -9,7 +9,8 @@
     <Grid Margin="2">
 
         <StackPanel Orientation="Vertical">
-            <RadioButton Style="{StaticResource NavHomeButton}" Margin="5"/>
+            <RadioButton Style="{StaticResource NavHomeButton}" IsChecked="True" Margin="5"/>
+            <RadioButton Style="{StaticResource NavCompleteButton}" Margin="5"/>
             <RadioButton Style="{StaticResource NavAddButton}" Margin="5"/>
         </StackPanel>
             

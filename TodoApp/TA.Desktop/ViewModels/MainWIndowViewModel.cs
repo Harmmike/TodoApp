@@ -12,6 +12,7 @@ namespace TA.Desktop.ViewModels
         public ICommand MinimizeWindow { get; set; }
         public ICommand MaximizeWindow { get; set; }
         public ICommand CloseApplication { get; set; }
+
         public MainWindowViewModel(INavigator navigator, EditViewModel editViewModel)
         {
             MinimizeWindow = new MinimizeWindowCommand();

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Views="clr-namespace:TA.Desktop.Views"
         mc:Ignorable="d"
+        Foreground="{StaticResource DefaultFontColor}"
         Title="Todo Application" Height="420" Width="768" WindowStyle="None"
         WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True"
 >

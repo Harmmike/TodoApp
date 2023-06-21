@@ -18,7 +18,7 @@
     <!--#endregion-->
     
     <!--#region Solid Color Brushes-->
-    <SolidColorBrush x:Key="NavBackgroundLayerBrush" Color="#FFF5ECEB" Opacity="0.2"/>
+    <SolidColorBrush x:Key="DefaultFontColor" Color="#FFF5ECEB"/>
     <SolidColorBrush x:Key="EditBackgroundLayerBrush" Color="#FFF5ECEB" Opacity="0.3"/>
     <SolidColorBrush x:Key="ListBackgroundLayerBrush" Color="#FFF5ECEB" Opacity="0.1"/>
     <SolidColorBrush x:Key="BorderBrush" Color="#FF97CEDA"/>

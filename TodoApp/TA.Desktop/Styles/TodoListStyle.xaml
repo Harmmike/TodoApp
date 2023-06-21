@@ -4,6 +4,7 @@
     <BooleanToVisibilityConverter x:Key="BoolToVis"/>
 
     <Style x:Key="TodoListStyle" TargetType="{x:Type ListViewItem}">
+        <Setter Property="Foreground" Value="{StaticResource DefaultFontColor}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -15,7 +16,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Text="{Binding Title}" Grid.Column="0" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" Padding="5"/>
@@ -28,12 +29,34 @@
                                     <TextBlock Text="{Binding DueTime}" Grid.Row="1" FontSize="14" HorizontalAlignment="Center" Padding="1"/>
                                 </Grid>
                                 <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
-                                    <CheckBox IsChecked="{Binding IsUrgent, Mode=OneWay}" Margin="5"/>
-                                    <CheckBox IsChecked="{Binding IsComplete, Mode=OneWay}" Margin="5"/>
-                                </StackPanel>
-                                <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Right" Margin="10, 5, 5, 5">
-                                    <TextBlock Text="Urgent" FontSize="10" Margin="5" VerticalAlignment="Center"/>
-                                    <TextBlock Text="Complete" FontSize="10" Margin="5, 7, 5, 5" VerticalAlignment="Center"/>
+                                    <Image Width="24" Height="24">
+                                        <Image.Style>
+                                            <Style TargetType="{x:Type Image}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsUrgent}" Value="False">
+                                                        <Setter Property="Source" Value="/Assets/Icons/iconNotUrgent.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsUrgent}" Value="True">
+                                                        <Setter Property="Source" Value="/Assets/Icons/iconUrgent.png"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                    <Image Width="24" Height="24">
+                                        <Image.Style>
+                                            <Style TargetType="{x:Type Image}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsComplete}" Value="False">
+                                                        <Setter Property="Source" Value="/Assets/Icons/iconIncomplete.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsComplete}" Value="True">
+                                                        <Setter Property="Source" Value="/Assets/Icons/iconComplete.png"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
                                 </StackPanel>
 
                             </Grid>
