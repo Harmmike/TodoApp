@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TA.Domain.DTOs;
-using TA.Domain.Models;
 
 namespace TA.Domain.Services.DbContexts
 {
