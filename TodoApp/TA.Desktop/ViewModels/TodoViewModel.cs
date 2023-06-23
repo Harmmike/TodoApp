@@ -9,7 +9,7 @@ namespace TA.Desktop.ViewModels
 
         private bool _isSelected;
 
-        public string TodoId => _todo.Id.Id;
+        public string TodoId => _todo.Id.ToString();
         public string Title => _todo.Title;
         public string DueDate => _todo.Due.ToShortDateString();
         public string DueTime => _todo.Due.ToShortTimeString();

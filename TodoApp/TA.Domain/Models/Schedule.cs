@@ -25,9 +25,9 @@ namespace TA.Domain.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Todo</returns>
-        public Todo GetTodoById(TodoId id)
+        public Todo GetTodoById(Guid id)
         {
-            return _todos.FirstOrDefault(todo => todo.Id.Id == id.Id);
+            return _todos.FirstOrDefault(todo => todo.Id == id);
         }
 
         /// <summary>

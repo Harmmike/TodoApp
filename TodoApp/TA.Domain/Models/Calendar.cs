@@ -29,7 +29,7 @@ namespace TA.Domain.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Todo</returns>
-        public Todo GetTodoById(TodoId id)
+        public Todo GetTodoById(Guid id)
         {
             return _schedule.GetTodoById(id);
         }

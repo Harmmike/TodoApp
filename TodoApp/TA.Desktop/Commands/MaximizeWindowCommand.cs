@@ -1,5 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
+using TA.Domain.Exceptions;
 
 namespace TA.Desktop.Commands
 {
@@ -11,6 +11,10 @@ namespace TA.Desktop.Commands
             {
                 Window window = (Window)parameter;
                 window.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                throw new InvalidArgumentException("Missing MainWindow.");
             }
         }
     }

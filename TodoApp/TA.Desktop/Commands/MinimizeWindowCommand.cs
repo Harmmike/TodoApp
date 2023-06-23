@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using TA.Domain.Exceptions;
 
 namespace TA.Desktop.Commands
 {
@@ -18,6 +19,10 @@ namespace TA.Desktop.Commands
                         window.WindowState = WindowState.Normal;
                         break;
                 }
+            }
+            else
+            {
+                throw new InvalidArgumentException("Parameter is not of type Window.");
             }
         }
     }

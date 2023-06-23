@@ -4,15 +4,15 @@ namespace TA.Domain.Models
 {
     public class Todo : Observable
     {
-        public TodoId Id { get; }
+        public Guid Id { get; }
         public string Title { get; }
         public string Description { get; }
-        public DateTime Created { get; }
+        public DateTime Created { get; set; }
         public DateTime Due { get; }
         public bool IsUrgent { get; }
         public bool IsComplete { get; }
 
-        public Todo(TodoId id, string title, string description, DateTime due, bool isUrgent = false, bool isComplete = false)
+        public Todo(Guid id, string title, string description, DateTime due, bool isUrgent = false, bool isComplete = false)
         {
             Id = id;
             Title = title;
@@ -28,9 +28,9 @@ namespace TA.Domain.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Returns True if the id conflicts. Returns False if the Id is available.</returns>
-        public bool ConflictingId(TodoId id)
+        public bool ConflictingId(Guid id)
         {
-            return Id.Id == id.Id;
+            return Id == id;
         }
     }
 }
