@@ -8,6 +8,8 @@ namespace TA.Desktop.State.Navigators
 {
     public class Navigator : Observable, INavigator
     {
+        private readonly Calendar _calendar;
+
         private Todo _selectedTodo;
 
         public ViewModel CurrentView { get; set; }
@@ -19,9 +21,10 @@ namespace TA.Desktop.State.Navigators
 
         public ICommand UpdateCurrentView { get; set; }
 
-        public Navigator()
+        public Navigator(Calendar calendar)
         {
-            UpdateCurrentView = new UpdateViewCommand(this);
+            _calendar = calendar;
+            UpdateCurrentView = new UpdateViewCommand(this, _calendar);
         }
     }
 }

@@ -12,12 +12,12 @@ namespace TA.Domain.Models
         public bool IsUrgent { get; }
         public bool IsComplete { get; }
 
-        public Todo(Guid id, string title, string description, DateTime due, bool isUrgent = false, bool isComplete = false)
+        public Todo(Guid id, string title, string description, DateTime created, DateTime due, bool isUrgent = false, bool isComplete = false)
         {
             Id = id;
             Title = title;
             Description = description;
-            Created = DateTime.Now;
+            Created = created;
             Due = due;
             IsUrgent = isUrgent;
             IsComplete = isComplete;

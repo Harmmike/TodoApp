@@ -13,6 +13,6 @@ namespace TA.Desktop.State.Navigators
 
     public enum ViewType
     {
-        Home, Urgent, Completed
+        Home, Add, Urgent, Completed
     }
 }

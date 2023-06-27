@@ -1,4 +1,7 @@
 ﻿using TA.Domain.Exceptions;
+using TA.Domain.Services.Providers;
+using TA.Domain.Services.TodoCreators;
+using TA.Domain.Services.Validation;
 
 namespace TA.Domain.Models
 {
@@ -8,20 +11,24 @@ namespace TA.Domain.Models
     /// </summary>
     public class Calendar
     {
-        private readonly Schedule _schedule;
+        private readonly ITodoProvider _todoProvider;
+        private readonly ITodoCreator _todoCreator;
+        private readonly ITodoIdValidator _todoIdValidator;
 
-        public Calendar(Schedule schedule)
+        public Calendar(ITodoProvider todoProvider, ITodoCreator todoCreator, ITodoIdValidator todoIdValidator)
         {
-            _schedule = schedule;
+            _todoProvider = todoProvider;
+            _todoCreator = todoCreator;
+            _todoIdValidator = todoIdValidator;
         }
 
         /// <summary>
         /// Returns an IEnumerable of all Todos.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Todo> GetAllTodos()
+        public async Task<IEnumerable<Todo>> GetAllTodosAsync()
         {
-            return _schedule.GetAllTodos();
+            return await _todoProvider.GetAllTodosAsync();
         }
 
         /// <summary>
@@ -29,18 +36,23 @@ namespace TA.Domain.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Todo</returns>
-        public Todo GetTodoById(Guid id)
+        public async Task<Todo> GetTodoByIdAsync(Guid id)
         {
-            return _schedule.GetTodoById(id);
+            return await _todoProvider.GetTodoByIdAsync(id);
         }
 
         /// <summary>
         /// Adds a newly created Todo to the current collection.
         /// </summary>
         /// <param name="todo"></param>
-        public void AddTodo(Todo todo)
+        public async Task AddTodoAsync(Todo todo)
         {
-            _schedule.AddTodo(todo);
+            Todo conflictingTodo = await _todoIdValidator.GetConflictingTodo(todo);
+            if (conflictingTodo != null)
+            {
+                throw new ConflictingIdException(conflictingTodo, todo);
+            }
+            await _todoCreator.CreateTodo(todo);
         }
     }
 }

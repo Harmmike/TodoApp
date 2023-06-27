@@ -7,9 +7,14 @@ namespace TA.Desktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        public bool CanExecute(object parameter)
+        public virtual bool CanExecute(object parameter)
         {
             return true;
+        }
+
+        protected void OnCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, new EventArgs());
         }
 
         public abstract void Execute(object parameter);
