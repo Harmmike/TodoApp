@@ -49,5 +49,10 @@ namespace TA.Desktop
 
             base.OnStartup(e);
         }
+
+        private void CreateServiceProvider()
+        {
+
+        }
     }
 }
