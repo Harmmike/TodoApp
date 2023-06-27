@@ -13,3 +13,4 @@ Logging
 Unit Tests
 Basic CRUD abilities
 Responsive UI
+Well-documented code
