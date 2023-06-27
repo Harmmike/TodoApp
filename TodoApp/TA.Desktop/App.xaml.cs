@@ -32,7 +32,6 @@ namespace TA.Desktop
             {
                 dbContext.Database.Migrate();
             }
-
             TodoAppDbContextFactory dbContextFactory = new TodoAppDbContextFactory(CONNECTION_STRING);
             ITodoCreator todoCreator = new DatabaseTodoCreator(dbContextFactory);
             ITodoProvider todoProvider = new DatabaseTodoProvider(dbContextFactory);
