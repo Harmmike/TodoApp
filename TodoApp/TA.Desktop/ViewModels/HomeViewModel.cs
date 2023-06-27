@@ -22,10 +22,6 @@ namespace TA.Desktop.ViewModels
             _todos = new ObservableCollection<TodoViewModel>();
 
             LoadTodos = new LoadTodosCommand(_calendar, this);
-
-            //_todos.Add(new TodoViewModel(new Todo(new Guid(), "Skype Number", "Fix the Auto-Renew on Skype", DateTime.Now, new System.DateTime(2023, 06, 25, 12, 45, 0), false, false)));
-            //_todos.Add(new TodoViewModel(new Todo(new Guid(), "Test 2", "Description Text", DateTime.Now, new System.DateTime(2023, 06, 24, 18, 30, 0), true, false)));
-            //_todos.Add(new TodoViewModel(new Todo(new Guid(), "Test 3", "Description Text", DateTime.Now.AddDays(-2), new System.DateTime(2023, 06, 27, 23, 00, 0), false, false)));
         }
 
         public void UpdateTodos(IEnumerable<Todo> todos)

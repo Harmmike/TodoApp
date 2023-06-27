@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using TA.Desktop.ViewModels;
 
 namespace TA.Desktop.Windows
 {
@@ -7,9 +8,10 @@ namespace TA.Desktop.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainWindowViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
     }
 }
